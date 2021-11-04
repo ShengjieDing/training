@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 
 namespace _02UnderstandingTypes
@@ -338,128 +339,128 @@ namespace _02UnderstandingTypes
             }
         }
         public static string conversion(uint century)
-        {   
+        {
             uint years = century * 100;
-            uint days = century * 100 * 365;
-            uint hours = century * 100 * 365 * 24;
-            uint minutes = century * 100 * 365 * 24 * 60;
-            uint seconds = century * 100 * 365 * 24 * 60 * 60;
-            ulong miliseconds = century * 100 * 365 * 24 * 60 * 60 * 10;
-            ulong microseconds = century * 100 * 365 * 24 * 60 * 60 * 10 * 10;
-            ulong nanoseconds = century * 100 * 365 * 24 * 60 * 60 * 10 * 10;
+            uint days = years * (365 + 97 / 400);
+            uint hours = days * 24;
+            ulong minutes = hours * 60;
+            ulong seconds = minutes * 60;
+            ulong miliseconds = seconds * 100;
+            ulong microseconds = miliseconds * 100;
+            ulong nanoseconds = microseconds * 100;            
             return ($"{century} centuries = {years} years = {days} days = {hours} hours = {minutes} minutes = {seconds} seconds = {miliseconds} miliseconds = {microseconds} microseconds = {nanoseconds} nanoseconds");
         }
 
         static void Main(string[] args)
         {
-            //1-1.
-            Console.WriteLine($"sbyte, Byte size: 8-bit, Max Value: {sbyte.MaxValue}, Min Value: {sbyte.MaxValue}");
-            Console.WriteLine($"byte, Byte size: 8-bit, Max Value: {byte.MaxValue}, Min Value: {byte.MaxValue}");
-            Console.WriteLine($"short, Byte size: 16-bit, Max Value: {short.MaxValue}, Min Value: {short.MaxValue}");
-            Console.WriteLine($"ushort, Byte size: 16-bit, Max Value: {ushort.MaxValue}, Min Value: {ushort.MaxValue}");
-            Console.WriteLine($"int, Byte size: 32-bit, Max Value: {int.MaxValue}, Min Value: {int.MaxValue}");
-            Console.WriteLine($"uint, Byte size: 32-bit, Max Value: {uint.MaxValue}, Min Value: {uint.MaxValue}");
-            Console.WriteLine($"long, Byte size: 64-bit, Max Value: {long.MaxValue}, Min Value: {long.MaxValue}");
-            Console.WriteLine($"ulong, Byte size: 64-bit, Max Value: {ulong.MaxValue}, Min Value: {ulong.MaxValue}");
-            Console.WriteLine($"float, Byte size: 4-bit, Max Value: {float.MaxValue}, Min Value: {float.MaxValue}");
-            Console.WriteLine($"double, Byte size: 8-bit, Max Value: {double.MaxValue}, Min Value: {double.MaxValue}");
-            Console.WriteLine($"decimal, Byte size: 16-bit, Max Value: {decimal.MaxValue}, Min Value: {decimal.MaxValue}");
+            ////1-1.
+            //Console.WriteLine($"sbyte, Byte size: 8-bit, Max Value: {sbyte.MaxValue}, Min Value: {sbyte.MaxValue}");
+            //Console.WriteLine($"byte, Byte size: 8-bit, Max Value: {byte.MaxValue}, Min Value: {byte.MaxValue}");
+            //Console.WriteLine($"short, Byte size: 16-bit, Max Value: {short.MaxValue}, Min Value: {short.MaxValue}");
+            //Console.WriteLine($"ushort, Byte size: 16-bit, Max Value: {ushort.MaxValue}, Min Value: {ushort.MaxValue}");
+            //Console.WriteLine($"int, Byte size: 32-bit, Max Value: {int.MaxValue}, Min Value: {int.MaxValue}");
+            //Console.WriteLine($"uint, Byte size: 32-bit, Max Value: {uint.MaxValue}, Min Value: {uint.MaxValue}");
+            //Console.WriteLine($"long, Byte size: 64-bit, Max Value: {long.MaxValue}, Min Value: {long.MaxValue}");
+            //Console.WriteLine($"ulong, Byte size: 64-bit, Max Value: {ulong.MaxValue}, Min Value: {ulong.MaxValue}");
+            //Console.WriteLine($"float, Byte size: 4-bit, Max Value: {float.MaxValue}, Min Value: {float.MaxValue}");
+            //Console.WriteLine($"double, Byte size: 8-bit, Max Value: {double.MaxValue}, Min Value: {double.MaxValue}");
+            //Console.WriteLine($"decimal, Byte size: 16-bit, Max Value: {decimal.MaxValue}, Min Value: {decimal.MaxValue}");
 
-            //1-2.
-            Console.WriteLine(conversion(1));
+            ////1-2.
+            Console.WriteLine(conversion(5));
 
-            //1-1.
-            fizzbuzz();
-            int correctNumber = new Random().Next(3) + 1;
-            int guessedNumber = int.Parse(Console.ReadLine());
-            Console.WriteLine(guessnumber(correctNumber, guessedNumber));
+            ////1-1.
+            //fizzbuzz();
+            //int correctNumber = new Random().Next(3) + 1;
+            //int guessedNumber = int.Parse(Console.ReadLine());
+            //Console.WriteLine(guessnumber(correctNumber, guessedNumber));
 
-            //1-2.
-            pyramid(5);
+            ////1-2.
+            //pyramid(5);
 
-            //1-3.
-            correctNumber = new Random().Next(3) + 1;
-            guessedNumber = int.Parse(Console.ReadLine());
-            Console.WriteLine(guessnumber(correctNumber, guessedNumber));
+            ////1-3.
+            //correctNumber = new Random().Next(3) + 1;
+            //guessedNumber = int.Parse(Console.ReadLine());
+            //Console.WriteLine(guessnumber(correctNumber, guessedNumber));
 
-            //1-4
-            var birthday = new DateTime(1995, 11, 13, 0, 0, 0);
-            int daysince = DaysOld(birthday);
-            Console.WriteLine(daysince);
-            var currdate = DateTime.Today;
-            var nextTenThousand = currdate.AddDays(10000);
-            Console.WriteLine(nextTenThousand);
+            ////1-4
+            //var birthday = new DateTime(1995, 11, 13, 0, 0, 0);
+            //int daysince = DaysOld(birthday);
+            //Console.WriteLine(daysince);
+            //var currdate = DateTime.Today;
+            //var nextTenThousand = currdate.AddDays(10000);
+            //Console.WriteLine(nextTenThousand);
 
-            //1-5
-            var currenttime = DateTime.Now;
-            greeting();
+            ////1-5
+            //var currenttime = DateTime.Now;
+            //greeting();
 
-            //1-6
-            countTo24();
+            ////1-6
+            //countTo24();
 
-            //2 - 1
-            int[] arr1 = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            int[] arr2 = new int[arr1.Length];
-            for (int i = 0; i < arr1.Length; i++)
-            {
-                arr2[i] = arr1[i];
-            }
-            foreach (int item in arr1) { Console.Write(item); }
-            Console.WriteLine();
-            foreach (int item in arr2) { Console.Write(item); }
+            ////2 - 1
+            //int[] arr1 = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            //int[] arr2 = new int[arr1.Length];
+            //for (int i = 0; i < arr1.Length; i++)
+            //{
+            //    arr2[i] = arr1[i];
+            //}
+            //foreach (int item in arr1) { Console.Write(item); }
+            //Console.WriteLine();
+            //foreach (int item in arr2) { Console.Write(item); }
 
-            //2-2
-            loopitem();
+            ////2-2
+            //loopitem();
 
-            //2-3
-            int[] primes = FindPrimesInRange(50, 100);
-            foreach (int item in primes) { Console.WriteLine(item); }
+            ////2-3
+            //int[] primes = FindPrimesInRange(50, 100);
+            //foreach (int item in primes) { Console.WriteLine(item); }
 
-            //2-4
-            int[] rotatedsum = rotate("3 2 4 -1", 2);
-            foreach (var item in rotatedsum) { Console.Write(item + ", "); }
-            Console.WriteLine();
+            ////2-4
+            //int[] rotatedsum = rotate("3 2 4 -1", 2);
+            //foreach (var item in rotatedsum) { Console.Write(item + ", "); }
+            //Console.WriteLine();
 
-            rotatedsum = rotate("1 2 3 4 5", 3);
-            foreach (var item in rotatedsum) { Console.Write(item + ", "); }
-            Console.WriteLine();
+            //rotatedsum = rotate("1 2 3 4 5", 3);
+            //foreach (var item in rotatedsum) { Console.Write(item + ", "); }
+            //Console.WriteLine();
 
-            //2-5
-            int[] longestarr = new int[] { 2, 1, 1, 2, 3, 3, 2, 2, 2, 1, };
-            string longest = longestSubArray(longestarr);
-            Console.WriteLine(longest);
-            int[] longestarr2 = new int[] { 1, 1, 1, 2, 3, 1, 3, 3 };
-            longest = longestSubArray(longestarr2);
-            Console.WriteLine(longest);
-            int[] arr3 = new int[] { 4, 4, 4, 4 };
-            longest = longestSubArray(arr3);
-            Console.WriteLine(longest);
+            ////2-5
+            //int[] longestarr = new int[] { 2, 1, 1, 2, 3, 3, 2, 2, 2, 1, };
+            //string longest = longestSubArray(longestarr);
+            //Console.WriteLine(longest);
+            //int[] longestarr2 = new int[] { 1, 1, 1, 2, 3, 1, 3, 3 };
+            //longest = longestSubArray(longestarr2);
+            //Console.WriteLine(longest);
+            //int[] arr3 = new int[] { 4, 4, 4, 4 };
+            //longest = longestSubArray(arr3);
+            //Console.WriteLine(longest);
 
-            //2-7
-            int[] reparr = new int[] { };
-            int[] maxvalue = mostRep(reparr);
-            foreach (var item in maxvalue) { Console.Write(item + " "); }
+            ////2-7
+            //int[] reparr = new int[] { };
+            //int[] maxvalue = mostRep(reparr);
+            //foreach (var item in maxvalue) { Console.Write(item + " "); }
 
-            //Strings
-            //2-1
-            string str = Console.ReadLine();
-            string reversedstr = reversestr1(str);
-            reversestr1(str);
-            Console.WriteLine(reversedstr);
+            ////Strings
+            ////2-1
+            //string str = Console.ReadLine();
+            //string reversedstr = reversestr1(str);
+            //reversestr1(str);
+            //Console.WriteLine(reversedstr);
 
-            //2-2
-            string revstr = "C# is not C++7, and PHP is not Delphi!";
-            string reversedSentance = reverseSentence(revstr);
-            Console.WriteLine(reversedSentance);
+            ////2-2
+            //string revstr = "C# is not C++7, and PHP is not Delphi!";
+            //string reversedSentance = reverseSentence(revstr);
+            //Console.WriteLine(reversedSentance);
 
-            //2-3
-            string palistr = "Hi,exe? ABBA!Hog fully a string: ExE.Bob";
-            string palindrome = GetPalindrome(palistr);
-            Console.WriteLine(palindrome);
+            ////2-3
+            //string palistr = "Hi,exe? ABBA!Hog fully a string: ExE.Bob";
+            //string palindrome = GetPalindrome(palistr);
+            //Console.WriteLine(palindrome);
 
-            //2-4
-            string url = "https://www.apple.com/iphone/";
-            parseURL(url);
+            ////2-4
+            //string url = "https://www.apple.com/iphone/";
+            //parseURL(url);
         }
     }
 }
